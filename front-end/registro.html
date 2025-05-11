@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SAMARY - Registro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="top-bar">
+    Envío gratis desde compras iguales o superiores a $150.00
+  </div>
+  <header class="border-bottom">
+    <div class="container py-3 d-flex justify-content-between align-items-center">
+      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" /></a>
+      <h1 class="logo">SAMARY</h1>
+      <div class="d-flex gap-3">
+        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" /></a>
+        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" /></a>
+        <span id="contador-carrito" class="badge bg-danger">0</span>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="coleccion.html">Colección</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-bold" href="#" data-bs-toggle="dropdown">Mujer</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="hombro.html">Bolso de Hombro</a></li>
+                <li><a class="dropdown-item" href="hobo.html">Bolso Hobo</a></li>
+                <li><a class="dropdown-item" href="mano.html">Bolso de Mano</a></li>
+                <li><a class="dropdown-item" href="mochila.html">Mochila</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-bold" href="#" data-bs-toggle="dropdown">Hombres</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="hombro1.html">Bolso de Hombro</a></li>
+                <li><a class="dropdown-item" href="hobo1.html">Bolso Hobo</a></li>
+                <li><a class="dropdown-item" href="mano1.html">Bolso de Mano</a></li>
+                <li><a class="dropdown-item" href="mochila1.html">Mochila</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="#">Descuentos</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="contacto.html">Contáctanos</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-md-6 col-lg-5">
+      <h2 class="text-center my-4">Registrarse</h2>
+      <form action="procesar_registro.php" method="post" class="card p-4 shadow">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre completo</label>
+          <input type="text" name="nombre" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" name="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" name="password" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Crear cuenta</button>
+        <p class="text-center mt-3">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white pt-5">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-3 mb-3 support">
+          <h5>Apoyo</h5>
+          <p>Colombia</p>
+          <p>contacta@samary.com</p>
+          <p>+57 607 123 4567</p>
+        </div>
+        <div class="col-md-3 mb-3 account">
+          <h5>Cuenta</h5>
+          <p><a href="login.html" class="text-white">Iniciar Sesión / Registrarse</a></p>
+          <p><a href="carrito.html" class="text-white">Carrito</a></p>
+        </div>
+        <div class="col-md-3 mb-3 links">
+          <h5>Enlaces Rápidos</h5>
+          <p><a href="#" class="text-white">Política de Privacidad</a></p>
+          <p><a href="#" class="text-white">Términos de Uso</a></p>
+          <p><a href="contacto.html" class="text-white">Contactos</a></p>
+        </div>
+        <div class="col-md-3 mb-3 socials">
+          <h5>Síguenos:</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3">
+            <a href="#"><img src="img/facebook_logo.png" alt="Facebook" width="32"></a>
+            <a href="#"><img src="img/instagram_logo.png" alt="Instagram" width="32"></a>
+            <a href="#"><img src="img/tiktok_logo.png" alt="TikTok" width="32"></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center border-top pt-3 mt-3">
+        <p class="mb-0 small">&copy; 2025 SAMARY. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+     function actualizarContadorCarrito() {
+    const productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const contador = document.getElementById('contador-carrito');
+    if (contador) {
+      contador.textContent = productosEnCarrito.length;
+    }
+  }
+  actualizarContadorCarrito();
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'carrito') {
+      actualizarContadorCarrito();
+    }
+  });
+  function agregarProductoAlCarrito(producto) {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push(producto);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarContadorCarrito();
+  }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

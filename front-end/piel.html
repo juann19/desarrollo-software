@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colección Piel - SAMARY</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="top-bar">
+    Envío gratis desde compras iguales o superiores a $150.00
+  </div>
+
+  <header class="border-bottom">
+    <div class="container py-3 d-flex justify-content-between align-items-center">
+      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" /></a>
+      <h1 class="logo">SAMARY</h1>
+      <div class="d-flex gap-3">
+        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" /></a>
+        <a href="carrito.html">
+          <img src="img/carro.png" alt="Carrito" width="40" />
+          <span id="contador-carrito" class="badge bg-danger">0</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="coleccion.html">Colección</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-bold" href="#" data-bs-toggle="dropdown">Mujer</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="hombro.html">Bolso de Hombro</a></li>
+                <li><a class="dropdown-item" href="hobo.html">Bolso Hobo</a></li>
+                <li><a class="dropdown-item" href="mano.html">Bolso de Mano</a></li>
+                <li><a class="dropdown-item" href="mochila.html">Mochila</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-bold" href="#" data-bs-toggle="dropdown">Hombres</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="hombro1.html">Bolso de Hombro</a></li>
+                <li><a class="dropdown-item" href="hobo1.html">Bolso Hobo</a></li>
+                <li><a class="dropdown-item" href="mano1.html">Bolso de Mano</a></li>
+                <li><a class="dropdown-item" href="mochila1.html">Mochila</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="#">Descuentos</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold" href="contacto.html">Contáctanos</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="colecciones-section text-center my-5">
+      <h2 class="mb-4">Colección Piel</h2>
+      <section class="coleccion-products">
+        <div class="products-grid">
+          <div class="product-item producto" onclick="openProductDetail('product1')">
+            <img src="img/piel.jpeg" alt="Producto 1" />
+            <p class="nombre">Producto 1</p>
+          </div>
+          <div class="product-item producto" onclick="openProductDetail('product2')">
+            <img src="img/piel1.avif" alt="Producto 2" />
+            <p class="nombre">Producto 2</p>
+          </div>
+          <div class="product-item producto" onclick="openProductDetail('product3')">
+            <img src="img/piel3.avif" alt="Producto 3" />
+            <p class="nombre">Producto 3</p>
+          </div>
+        </div>
+      </section>
+      <section class="product-details">
+        <div class="product-detail" id="product1">
+          <button class="close-btn" onclick="closeProductDetail('product1')">&times;</button>
+          <div class="product-info producto">
+            <img src="img/piel.jpeg" alt="Detalle Producto 1" />
+            <div class="product-description">
+              <h3 class="nombre">Producto 1 - Piel</h3>
+              <p>Descripción completa del Producto 1.</p>
+              <p class="precio">149.99</p>
+              <label for="quantity1">Cantidad:</label>
+              <input type="number" id="quantity1" min="1" value="1" />
+              <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-detail" id="product2">
+          <button class="close-btn" onclick="closeProductDetail('product2')">&times;</button>
+          <div class="product-info producto">
+            <img src="img/piel1.avif" alt="Detalle Producto 2" />
+            <div class="product-description">
+              <h3 class="nombre">Producto 2 - Piel</h3>
+              <p>Descripción completa del Producto 2.</p>
+              <p class="precio">149.99</p>
+              <label for="quantity2">Cantidad:</label>
+              <input type="number" id="quantity2" min="1" value="1" />
+              <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-detail" id="product3">
+          <button class="close-btn" onclick="closeProductDetail('product3')">&times;</button>
+          <div class="product-info producto">
+            <img src="img/piel3.avif" alt="Detalle Producto 3" />
+            <div class="product-description">
+              <h3 class="nombre">Producto 3 - Piel</h3>
+              <p>Descripción completa del Producto 3.</p>
+              <p class="precio">149.99</p>
+              <label for="quantity3">Cantidad:</label>
+              <input type="number" id="quantity3" min="1" value="1" />
+              <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer class="bg-dark text-white pt-5">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-3 mb-3 support">
+          <h5>Apoyo</h5>
+          <p>Colombia</p>
+          <p>contacta@samary.com</p>
+          <p>+57 607 123 4567</p>
+        </div>
+        <div class="col-md-3 mb-3 account">
+          <h5>Cuenta</h5>
+          <p><a href="login.html" class="text-white">Iniciar Sesión / Registrarse</a></p>
+          <p><a href="carrito.html" class="text-white">Carrito</a></p>
+        </div>
+        <div class="col-md-3 mb-3 links">
+          <h5>Enlaces Rápidos</h5>
+          <p><a href="#" class="text-white">Política de Privacidad</a></p>
+          <p><a href="#" class="text-white">Términos de Uso</a></p>
+          <p><a href="contacto.html" class="text-white">Contactos</a></p>
+        </div>
+        <div class="col-md-3 mb-3 socials">
+          <h5>Síguenos:</h5>
+          <div class="d-flex gap-3">
+            <a href="#"><img src="img/facebook_logo.png" alt="Facebook" width="32"></a>
+            <a href="#"><img src="img/instagram_logo.png" alt="Instagram" width="32"></a>
+            <a href="#"><img src="img/tiktok_logo.png" alt="TikTok" width="32"></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center border-top pt-3 mt-3">
+        <p class="mb-0 small">&copy; 2025 SAMARY. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function openProductDetail(id) {
+      document.querySelectorAll('.product-detail').forEach(d => d.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeProductDetail(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.product-detail').forEach(d => d.style.display = 'none');
+
+      const botones = document.querySelectorAll('.add-to-cart');
+      const contador = document.getElementById('contador-carrito');
+
+      function actualizarContador() {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const total = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+        if (contador) contador.textContent = total;
+      }
+
+      botones.forEach((btn, index) => {
+        btn.addEventListener('click', function () {
+          const producto = btn.closest('.producto');
+          const nombre = producto.querySelector('.nombre').textContent.trim();
+          const precio = parseFloat(producto.querySelector('.precio').textContent.trim());
+          const imagen = producto.querySelector('img').src;
+          const cantidadInput = producto.querySelector('input[type="number"]');
+          const cantidad = parseInt(cantidadInput.value);
+
+          const item = { nombre, precio, imagen, cantidad };
+
+          let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+          const existente = carrito.find(p => p.nombre === nombre);
+          if (existente) {
+            existente.cantidad += cantidad;
+          } else {
+            carrito.push(item);
+          }
+
+          localStorage.setItem('carrito', JSON.stringify(carrito));
+          actualizarContador();
+          alert('Producto añadido al carrito');
+        });
+      });
+
+      actualizarContador();
+    });
+  </script>
+</body>
+</html>
