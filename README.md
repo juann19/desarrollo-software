@@ -8,7 +8,7 @@ Paula Andrea Chinchilla Ortiz
 
 Juan David Salcedo Heredia
 
-Yarli Guerrero
+Yarly Melitza Guerrero Berbesi
 
 
 Arquitectura usada
