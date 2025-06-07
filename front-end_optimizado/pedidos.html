@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedidos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
+
+  <h1 class="mb-4">Lista de Pedidos</h1>
+  <div id="lista-pedidos"></div>
+
+  <script>
+    // Función para formatear la fecha en formato legible
+    function formatearFecha(fechaISO) {
+      if (!fechaISO) return "";
+      const fecha = new Date(fechaISO);
+      return fecha.toLocaleDateString("es-CO", {
+        year: "numeric", month: "long", day: "numeric",
+        hour: "2-digit", minute: "2-digit"
+      });
+    }
+
+    // Renderiza los pedidos de forma eficiente
+    fetch("http://localhost:8086/api/pedidos")
+      .then(res => res.json())
+      .then(pedidos => {
+        const contenedor = document.getElementById("lista-pedidos");
+        if (!Array.isArray(pedidos) || pedidos.length === 0) {
+          contenedor.innerHTML = `<div class="alert alert-info">No hay pedidos registrados.</div>`;
+          return;
+        }
+
+        // Usar un solo innerHTML para evitar múltiples repaints
+        let html = "";
+        pedidos.forEach(pedido => {
+          let productosHTML = "";
+          if (Array.isArray(pedido.detalles)) {
+            pedido.detalles.forEach(det => {
+              productosHTML += `
+                <li>
+                  ${det.producto?.nombre || "Producto"} - ${det.cantidad} und - $${det.precioUnitario}
+                </li>`;
+            });
+          }
+          html += `
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Pedido #${pedido.id}</h5>
+                <p><strong>Cliente:</strong> ${pedido.usuario?.nombre || "Desconocido"}</p>
+                <p><strong>Estado:</strong> ${pedido.estado}</p>
+                <p><strong>Fecha:</strong> ${formatearFecha(pedido.fechaPedido)}</p>
+                <p><strong>Productos:</strong></p>
+                <ul>${productosHTML}</ul>
+              </div>
+            </div>
+          `;
+        });
+        contenedor.innerHTML = html;
+      })
+      .catch(err => {
+        console.error("Error al obtener pedidos:", err);
+        document.getElementById("lista-pedidos").innerHTML = `<div class="alert alert-danger">Error al cargar los pedidos.</div>`;
+      });
+  </script>
+
+</body>
+</html>

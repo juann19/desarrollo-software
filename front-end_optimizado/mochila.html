@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colección Herencia - SAMARY</title>
+  <title>SAMARY - Mochila Mujer</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-
-  <div class="top-bar text-center py-2 bg-light text-dark fw-semibold">
+  <div class="top-bar">
     Envío gratis desde compras iguales o superiores a $150.00
   </div>
-  <header class="border-bottom shadow-sm">
+
+  <header class="border-bottom">
     <div class="container py-3 d-flex justify-content-between align-items-center">
-      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" /></a>
-      <h1 class="logo m-0">SAMARY</h1>
-      <div class="d-flex gap-3 align-items-center">
-        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" /></a>
-        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" /></a>
+      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" loading="lazy" /></a>
+      <h1 class="logo">SAMARY</h1>
+      <div class="d-flex gap-3">
+        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" loading="lazy" /></a>
+        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" loading="lazy" /></a>
         <span id="contador-carrito" class="badge bg-danger">0</span>
       </div>
     </div>
@@ -58,61 +58,60 @@
       </div>
     </nav>
   </header>
+
   <section class="colecciones-section text-center my-5">
-    <h2 class="mb-4">Colección Aura</h2>
+    <h2 class="mb-4">Colección Mochila Mujer</h2>
     <div class="products-grid">
-      <div class="product-item" onclick="showProductDetail('img/herencia.jpeg', 'Bolso Herencia 1', 'Elegante bolso de cuero artesanal con acabados en bronce antiguo.', '$160.00')">
-        <img src="img/herencia.jpeg" alt="Bolso Herencia 1" />
-        <p>Bolso Aura 1</p>
+      <div class="product-item" onclick="showDetail('mujer/mochilamujer.jpeg', 'Mochila Mujer 1', 'Descripción del producto Mochila Mujer 1.', 600)">
+        <img src="mujer/mochilamujer.jpeg" alt="Mochila Mujer 1" loading="lazy"/>
+        <p>Mochila Mujer 1</p>
       </div>
-      <div class="product-item" onclick="showProductDetail('img/herencia1.jpeg', 'Bolso Herencia 2', 'Diseño clásico con compartimentos funcionales y cuero genuino.', '$170.00')">
-        <img src="img/herencia1.jpeg" alt="Bolso Herencia 2" />
-        <p>Bolso Aura 2</p>
-      </div>
-      <div class="product-item" onclick="showProductDetail('img/herencia3.jpeg', 'Bolso Herencia 3', 'Un bolso que combina tradición y elegancia para el uso diario.', '$165.00')">
-        <img src="img/herencia3.jpeg" alt="Bolso Herencia 3" />
-        <p>Bolso Aura 3</p>
+      <div class="product-item" onclick="showDetail('mujer/mochilamujer3.jpeg', 'Mochila Mujer 2', 'Descripción del producto Mochila Mujer 2.', 650)">
+        <img src="mujer/mochilamujer3.jpeg" alt="Mochila Mujer 2" loading="lazy"/>
+        <p>Mochila Mujer 2</p>
       </div>
     </div>
   </section>
-  <div class="product-detail" id="productDetail">
-    <button class="close-btn" onclick="closeProductDetail()">&times;</button>
-    <img id="modalImage" src="" alt="Producto" />
+
+  <div class="product-detail" id="productDetail" style="display:none;">
+    <button class="close-btn" onclick="closeDetail()">&times;</button>
+    <img id="detailImage" src="" alt="Producto">
     <div class="product-description">
-      <h3 id="modalTitle">Título</h3>
-      <p id="modalText">Descripción del producto</p>
-      <p class="price" id="modalPrice">$0.00</p>
-      <label for="cantidad"><strong>Cantidad:</strong></label>
-      <input type="number" id="cantidad" min="1" value="1" />
-      <button id="addToCartBtn">Añadir al carrito</button>
+      <h3 id="detailTitle"></h3>
+      <p id="detailDescription"></p>
+      <p class="price">$<span id="detailPrice"></span></p>
+      <label for="quantity"><strong>Cantidad:</strong></label>
+      <input type="number" id="quantity" value="1" min="1">
+      <button onclick="addToCart()">Agregar al carrito</button>
     </div>
   </div>
+
   <footer class="bg-dark text-white pt-5">
     <div class="container">
       <div class="row text-center text-md-start">
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 support">
           <h5>Apoyo</h5>
           <p>Colombia</p>
           <p>contacta@samary.com</p>
           <p>+57 607 123 4567</p>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 account">
           <h5>Cuenta</h5>
           <p><a href="login.html" class="text-white">Iniciar Sesión / Registrarse</a></p>
           <p><a href="carrito.html" class="text-white">Carrito</a></p>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 links">
           <h5>Enlaces Rápidos</h5>
           <p><a href="#" class="text-white">Política de Privacidad</a></p>
           <p><a href="#" class="text-white">Términos de Uso</a></p>
           <p><a href="contacto.html" class="text-white">Contactos</a></p>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 socials">
           <h5>Síguenos:</h5>
           <div class="d-flex justify-content-center justify-content-md-start gap-3">
-            <a href="#"><img src="img/facebook_logo.png" alt="Facebook" width="32"></a>
-            <a href="#"><img src="img/instagram_logo.png" alt="Instagram" width="32"></a>
-            <a href="#"><img src="img/tiktok_logo.png" alt="TikTok" width="32"></a>
+            <a href="#" class="text-white"><img src="img/facebook_logo.png" alt="Facebook" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/instagram_logo.png" alt="Instagram" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/tiktok_logo.png" alt="TikTok" width="32" loading="lazy"></a>
           </div>
         </div>
       </div>
@@ -121,50 +120,59 @@
       </div>
     </div>
   </footer>
+
   <script>
-    function showProductDetail(img, title, description, price) {
-      document.getElementById("modalImage").src = img;
-      document.getElementById("modalTitle").textContent = title;
-      document.getElementById("modalText").textContent = description;
-      document.getElementById("modalPrice").textContent = price;
-      document.getElementById("productDetail").style.display = "block";
+    let currentProduct = {};
+
+    function showDetail(img, title, description, price) {
+      currentProduct = { img, title, description, price };
+      document.getElementById('detailImage').src = img;
+      document.getElementById('detailTitle').innerText = title;
+      document.getElementById('detailDescription').innerText = description;
+      document.getElementById('detailPrice').innerText = price;
+      document.getElementById('quantity').value = 1;
+      document.getElementById('productDetail').style.display = 'block';
     }
-  
-    function closeProductDetail() {
-      document.getElementById("productDetail").style.display = "none";
+
+    function closeDetail() {
+      document.getElementById('productDetail').style.display = 'none';
     }
-    let contador = 0;
-    const contadorSpan = document.getElementById("contador-carrito");
-    const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
-    contador = carritoGuardado.reduce((sum, item) => sum + item.cantidad, 0);
-    if (contadorSpan) contadorSpan.textContent = contador;
-  
-    document.getElementById("addToCartBtn").addEventListener("click", function () {
-      const cantidad = parseInt(document.getElementById("cantidad").value);
-      const titulo = document.getElementById("modalTitle").textContent.trim();
-      const precio = parseFloat(document.getElementById("modalPrice").textContent.replace('$', '').trim());
-      const imagen = document.getElementById("modalImage").src;
-  
-      const producto = { nombre: titulo, precio, imagen, cantidad };
-  
-      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      const existente = carrito.find(p => p.nombre === producto.nombre);
+
+    function addToCart() {
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const newProduct = {
+        nombre: currentProduct.title,
+        precio: currentProduct.price,
+        cantidad: quantity
+      };
+
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const existente = carrito.find(item => item.nombre === newProduct.nombre);
       if (existente) {
-        existente.cantidad += cantidad;
+        existente.cantidad += newProduct.cantidad;
       } else {
-        carrito.push(producto);
+        carrito.push(newProduct);
       }
-  
+
       localStorage.setItem("carrito", JSON.stringify(carrito));
-      contador += cantidad;
-      if (contadorSpan) contadorSpan.textContent = contador;
-  
-      alert("Producto añadido al carrito");
-      closeProductDetail();
+      updateCartCount();
+      alert('Producto agregado al carrito');
+      closeDetail();
+    }
+
+    function updateCartCount() {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const total = carrito.reduce((sum, item) => sum + (item.cantidad || 1), 0);
+      document.getElementById('contador-carrito').textContent = total;
+    }
+
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+
+    // Sincronizar contador entre pestañas
+    window.addEventListener('storage', e => {
+      if (e.key === 'carrito') updateCartCount();
     });
   </script>
-  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

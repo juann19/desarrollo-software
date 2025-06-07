@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SAMARY - Mano</title>
+  <title>Contáctenos - SAMARY</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
@@ -11,18 +11,16 @@
   <div class="top-bar">
     Envío gratis desde compras iguales o superiores a $150.00
   </div>
-
   <header class="border-bottom">
     <div class="container py-3 d-flex justify-content-between align-items-center">
-      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" /></a>
+      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" loading="lazy" /></a>
       <h1 class="logo">SAMARY</h1>
       <div class="d-flex gap-3">
-        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" /></a>
-        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" /></a>
+        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" loading="lazy" /></a>
+        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" loading="lazy" /></a>
         <span id="contador-carrito" class="badge bg-danger">0</span>
       </div>
     </div>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
@@ -58,63 +56,60 @@
       </div>
     </nav>
   </header>
-  <section class="colecciones-section">
-    <h2>Colección Bolso de Mano</h2>
-    <div class="products-grid">
-      <div class="product-item" onclick="showDetail('mujer/manomujer.webp', 'Bolso Mano 1', 'Descripción del producto Mano 1.', 410)">
-        <img src="mujer/manomujer.webp" alt="Bolso Mano 1"/>
-        <p>Bolso Mano 1</p>
-      </div>
-      <div class="product-item" onclick="showDetail('mujer/manomujer1.jpg', 'Bolso Mano 2', 'Descripción del producto Mano 2.', 450)">
-        <img src="mujer/manomujer1.jpg" alt="Bolso Mano 2"/>
-        <p>Bolso Mano 2</p>
-      </div>
-      <div class="product-item" onclick="showDetail('mujer/manomujer3.jpeg', 'Bolso Mano 3', 'Descripción del producto Mano 3.', 470)">
-        <img src="mujer/manomujer3.jpeg" alt="Bolso Mano 3"/>
-        <p>Bolso Mano 2</p>
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Contáctanos</h2>
+    <p class="text-center mb-4">¿Tienes preguntas, sugerencias o deseas más información? Envíanos un mensaje.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form id="contactForm" autocomplete="off">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required>
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-dark px-4">Enviar</button>
+          </div>
+        </form>
+        <div id="formMsg" class="alert alert-success mt-3 d-none" role="alert">
+          ¡Gracias por contactarnos! Te responderemos pronto.
+        </div>
       </div>
     </div>
   </section>
-
-  <div class="product-detail" id="productDetail">
-    <button class="close-btn" onclick="closeDetail()">&times;</button>
-    <img id="detailImage" src="" alt="Producto">
-    <div class="product-description">
-      <h3 id="detailTitle"></h3>
-      <p id="detailDescription"></p>
-      <p class="price">$<span id="detailPrice"></span></p>
-      <label for="quantity">Cantidad:</label>
-      <input type="number" id="quantity" value="1" min="1">
-      <button onclick="addToCart()">Agregar al carrito</button>
-    </div>
-  </div>
-
   <footer class="bg-dark text-white pt-5">
     <div class="container">
       <div class="row text-center text-md-start">
-        <div class="col-md-3 mb-3 support">
+        <div class="col-md-3 mb-3">
           <h5>Apoyo</h5>
           <p>Colombia</p>
           <p>contacta@samary.com</p>
           <p>+57 607 123 4567</p>
         </div>
-        <div class="col-md-3 mb-3 account">
+        <div class="col-md-3 mb-3">
           <h5>Cuenta</h5>
           <p><a href="login.html" class="text-white">Iniciar Sesión / Registrarse</a></p>
           <p><a href="carrito.html" class="text-white">Carrito</a></p>
         </div>
-        <div class="col-md-3 mb-3 links">
+        <div class="col-md-3 mb-3">
           <h5>Enlaces Rápidos</h5>
           <p><a href="#" class="text-white">Política de Privacidad</a></p>
           <p><a href="#" class="text-white">Términos de Uso</a></p>
           <p><a href="contacto.html" class="text-white">Contactos</a></p>
         </div>
-        <div class="col-md-3 mb-3 socials">
+        <div class="col-md-3 mb-3">
           <h5>Síguenos:</h5>
           <div class="d-flex justify-content-center justify-content-md-start gap-3">
-            <a href="#" class="text-white"><img src="img/facebook_logo.png" alt="Facebook" width="32"></a>
-            <a href="#" class="text-white"><img src="img/instagram_logo.png" alt="Instagram" width="32"></a>
-            <a href="#" class="text-white"><img src="img/tiktok_logo.png" alt="TikTok" width="32"></a>
+            <a href="#" class="text-white"><img src="img/facebook_logo.png" alt="Facebook" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/instagram_logo.png" alt="Instagram" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/tiktok_logo.png" alt="TikTok" width="32" loading="lazy"></a>
           </div>
         </div>
       </div>
@@ -123,55 +118,26 @@
       </div>
     </div>
   </footer>
-
   <script>
-    let currentProduct = {};
+    // Actualiza el contador del carrito
+    const actualizarContadorCarrito = () => {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const total = carrito.reduce((sum, item) => sum + (item.cantidad || 1), 0);
+      const contador = document.getElementById('contador-carrito');
+      if (contador) contador.textContent = total;
+    };
+    actualizarContadorCarrito();
+    window.addEventListener('storage', e => {
+      if (e.key === 'carrito') actualizarContadorCarrito();
+    });
 
-    function showDetail(img, title, description, price) {
-      currentProduct = { img, title, description, price };
-      document.getElementById('detailImage').src = img;
-      document.getElementById('detailTitle').innerText = title;
-      document.getElementById('detailDescription').innerText = description;
-      document.getElementById('detailPrice').innerText = price;
-      document.getElementById('quantity').value = 1;
-      document.getElementById('productDetail').style.display = 'block';
-    }
-
-    function closeDetail() {
-      document.getElementById('productDetail').style.display = 'none';
-    }
-
-    function addToCart() {
-      const quantity = parseInt(document.getElementById('quantity').value);
-      const newProduct = {
-        nombre: currentProduct.title,
-        precio: currentProduct.price,
-        cantidad: quantity
-      };
-
-      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-      const existente = carrito.find(item => item.nombre === newProduct.nombre);
-      if (existente) {
-        existente.cantidad += newProduct.cantidad;
-      } else {
-        carrito.push(newProduct);
-      }
-
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      updateCartCount();
-      alert('Producto agregado al carrito');
-      closeDetail();
-    }
-
-    function updateCartCount() {
-      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      const total = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-      document.getElementById('contador-carrito').textContent = total;
-    }
-
-    document.addEventListener('DOMContentLoaded', updateCartCount);
+    // Validación y feedback del formulario de contacto
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formMsg').classList.remove('d-none');
+      this.reset();
+    });
   </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

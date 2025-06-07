@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colección - SAMARY</title>
+  <title>Nosotros - SAMARY</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
   <div class="top-bar">
     Envío gratis desde compras iguales o superiores a $150.00
   </div>
+
   <header class="border-bottom">
     <div class="container py-3 d-flex justify-content-between align-items-center">
-      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" /></a>
+      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" loading="lazy" /></a>
       <h1 class="logo">SAMARY</h1>
       <div class="d-flex gap-3">
-        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" /></a>
-        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" /></a>
+        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" loading="lazy" /></a>
+        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" loading="lazy" /></a>
         <span id="contador-carrito" class="badge bg-danger">0</span>
       </div>
     </div>
@@ -57,55 +59,59 @@
       </div>
     </nav>
   </header>
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Colección Destacada</h2>
-    <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <a href="herencia.html">
-          <img src="img/coleccion1.png" alt="Colección Herencia" class="img-fluid rounded shadow-sm">
-          <p class="mt-2 fw-bold">Colección Herencia</p>
-        </a>
+
+  <main class="container my-5">
+    <div class="text-center">
+      <h1 class="mb-4">Sobre Nosotros</h1>
+      <img src="img/logo.png" alt="Nuestro equipo" class="img-fluid rounded mb-4" style="max-width: 300px;" loading="lazy">
+      <div class="mx-auto" style="max-width: 800px; text-align: justify;">
+        <h2 class="mt-4">Nuestra Historia</h2>
+        <p>Hace más de cinco años, en un pequeño taller familiar, nació nuestra pasión por la marroquinería. Inspirados por la tradición artesanal y la calidad del cuero, comenzamos a diseñar y fabricar bolsos únicos, combinando técnicas clásicas con un toque moderno. Desde nuestros inicios, nos hemos dedicado a seleccionar los mejores materiales y a cuidar cada detalle en cada pieza que creamos. Creemos que un bolso no es solo un accesorio, sino un compañero de vida, hecho para durar y adaptarse a cada estilo. Hoy seguimos manteniendo el mismo compromiso con la calidad y la elegancia, ofreciendo productos que reflejan nuestra dedicación y amor por el arte del cuero.</p>
+  
+        <h2 class="mt-4">Misión</h2>
+        <p>Crear bolsos de cuero de alta calidad, fusionando tradición y diseño moderno, garantizando durabilidad, elegancia y funcionalidad para nuestros clientes.</p>
+  
+        <h2 class="mt-4">Visión</h2>
+        <p>Para el año 2030, ser una marca reconocida por su compromiso con la artesanía, la calidad y la sostenibilidad, expandiendo nuestra presencia en el mercado y ofreciendo productos exclusivos que reflejen nuestra pasión por la marroquinería.</p>
+  
+        <h2 class="mt-4">Compromiso con el Medio Ambiente</h2>
+        <p>Nos preocupamos por el impacto ambiental y trabajamos para reducir nuestra huella ecológica. Por ello:</p>
+        <ul class="text-start">
+          <li>Utilizamos cuero de origen responsable.</li>
+          <li>Optamos por procesos de producción sostenibles y minimizamos los residuos.</li>
+          <li>Promovemos el consumo consciente, diseñando productos de larga duración.</li>
+        </ul>
       </div>
-      <div class="col-md-4 text-center">
-        <a href="aura.html">
-          <img src="img/coleccion3.png" alt="Colección Aura" class="img-fluid rounded shadow-sm">
-          <p class="mt-2 fw-bold">Colección Aura</p>
-        </a>
-      </div>
-      <div class="col-md-4 text-center">
-        <a href="piel.html">
-          <img src="img/coleccion4.png" alt="Colección Piel" class="img-fluid rounded shadow-sm">
-          <p class="mt-2 fw-bold">Colección Piel</p>
-        </a>
-      </div>
+      <img src="img/medioambiente.png" alt="Medio ambiente" class="img-fluid rounded mb-4" style="max-width: 700px;" loading="lazy">
     </div>
-  </section>
+  </main>
+  
   <footer class="bg-dark text-white pt-5">
     <div class="container">
       <div class="row text-center text-md-start">
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 support">
           <h5>Apoyo</h5>
           <p>Colombia</p>
           <p>contacta@samary.com</p>
           <p>+57 607 123 4567</p>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 account">
           <h5>Cuenta</h5>
           <p><a href="login.html" class="text-white">Iniciar Sesión / Registrarse</a></p>
           <p><a href="carrito.html" class="text-white">Carrito</a></p>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 links">
           <h5>Enlaces Rápidos</h5>
           <p><a href="#" class="text-white">Política de Privacidad</a></p>
           <p><a href="#" class="text-white">Términos de Uso</a></p>
           <p><a href="contacto.html" class="text-white">Contactos</a></p>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3 socials">
           <h5>Síguenos:</h5>
           <div class="d-flex justify-content-center justify-content-md-start gap-3">
-            <a href="#" class="text-white"><img src="img/facebook_logo.png" alt="Facebook" width="32"></a>
-            <a href="#" class="text-white"><img src="img/instagram_logo.png" alt="Instagram" width="32"></a>
-            <a href="#" class="text-white"><img src="img/tiktok_logo.png" alt="TikTok" width="32"></a>
+            <a href="#" class="text-white"><img src="img/facebook_logo.png" alt="Facebook" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/instagram_logo.png" alt="Instagram" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/tiktok_logo.png" alt="TikTok" width="32" loading="lazy"></a>
           </div>
         </div>
       </div>
@@ -116,6 +122,17 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script>
+    // Contador de carrito funcional y sincronizado
+    function updateCartCount() {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const total = carrito.reduce((sum, item) => sum + (item.cantidad || 1), 0);
+      document.getElementById("contador-carrito").textContent = total;
+    }
+    document.addEventListener("DOMContentLoaded", updateCartCount);
+    window.addEventListener("storage", e => {
+      if (e.key === "carrito") updateCartCount();
+    });
+  </script>
 </body>
 </html>

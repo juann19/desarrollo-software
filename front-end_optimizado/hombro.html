@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SAMARY - Hombro Hombres</title>
+  <title>SAMARY - Hombro</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
@@ -12,13 +12,14 @@
   <div class="top-bar">
     Envío gratis desde compras iguales o superiores a $150.00
   </div>
+
   <header class="border-bottom">
     <div class="container py-3 d-flex justify-content-between align-items-center">
-      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" /></a>
+      <a href="login.html"><img src="img/login.png" alt="Iniciar sesión" width="40" loading="lazy" /></a>
       <h1 class="logo">SAMARY</h1>
       <div class="d-flex gap-3">
-        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" /></a>
-        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" /></a>
+        <a href="#"><img src="img/lupa.png" alt="Buscar" width="40" loading="lazy" /></a>
+        <a href="carrito.html"><img src="img/carro.png" alt="Carrito" width="40" loading="lazy" /></a>
         <span id="contador-carrito" class="badge bg-danger">0</span>
       </div>
     </div>
@@ -59,28 +60,28 @@
     </nav>
   </header>
 
-  <section class="colecciones-section">
-    <h2>Colección Hombro</h2>
+  <section class="colecciones-section text-center my-5">
+    <h2 class="mb-4">Colección Hombro</h2>
     <div class="products-grid">
-      <div class="product-item" onclick="showDetail('hombre/hombohombre.jpeg', 'Bolso Hombro Hombre 1', 'Descripción del producto Hombro 1.', 500)">
-        <img src="hombre/hombohombre.jpeg" alt="Bolso Hombro 1"/>
+      <div class="product-item" onclick="showDetail('mujer/hombro1.webp', 'Bolso Hombro 1', 'Descripción del producto Hombro 1.', 520)">
+        <img src="mujer/hombro1.webp" alt="Bolso Hombro 1" loading="lazy"/>
         <p>Bolso Hombro 1</p>
       </div>
-      <div class="product-item" onclick="showDetail('hombre/hombrohombre1.jpeg', 'Bolso Hombro Hombre 2', 'Descripción del producto Hombro 2.', 550)">
-        <img src="hombre/hombrohombre1.jpeg" alt="Bolso Hombro 2"/>
+      <div class="product-item" onclick="showDetail('mujer/hombromujer.avif', 'Bolso Hombro 2', 'Descripción del producto Hombro 2.', 570)">
+        <img src="mujer/hombromujer.avif" alt="Bolso Hombro 2" loading="lazy"/>
         <p>Bolso Hombro 2</p>
       </div>
     </div>
   </section>
 
-  <div class="product-detail" id="productDetail">
+  <div class="product-detail" id="productDetail" style="display:none;">
     <button class="close-btn" onclick="closeDetail()">&times;</button>
     <img id="detailImage" src="" alt="Producto">
     <div class="product-description">
       <h3 id="detailTitle"></h3>
       <p id="detailDescription"></p>
       <p class="price">$<span id="detailPrice"></span></p>
-      <label for="quantity">Cantidad:</label>
+      <label for="quantity"><strong>Cantidad:</strong></label>
       <input type="number" id="quantity" value="1" min="1">
       <button onclick="addToCart()">Agregar al carrito</button>
     </div>
@@ -109,9 +110,9 @@
         <div class="col-md-3 mb-3 socials">
           <h5>Síguenos:</h5>
           <div class="d-flex justify-content-center justify-content-md-start gap-3">
-            <a href="#" class="text-white"><img src="img/facebook_logo.png" alt="Facebook" width="32"></a>
-            <a href="#" class="text-white"><img src="img/instagram_logo.png" alt="Instagram" width="32"></a>
-            <a href="#" class="text-white"><img src="img/tiktok_logo.png" alt="Twitter" width="32"></a>
+            <a href="#" class="text-white"><img src="img/facebook_logo.png" alt="Facebook" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/instagram_logo.png" alt="Instagram" width="32" loading="lazy"></a>
+            <a href="#" class="text-white"><img src="img/tiktok_logo.png" alt="TikTok" width="32" loading="lazy"></a>
           </div>
         </div>
       </div>
@@ -123,7 +124,7 @@
 
   <script>
     let currentProduct = {};
-  
+
     function showDetail(img, title, description, price) {
       currentProduct = { img, title, description, price };
       document.getElementById('detailImage').src = img;
@@ -133,11 +134,11 @@
       document.getElementById('quantity').value = 1;
       document.getElementById('productDetail').style.display = 'block';
     }
-  
+
     function closeDetail() {
       document.getElementById('productDetail').style.display = 'none';
     }
-  
+
     function addToCart() {
       const quantity = parseInt(document.getElementById('quantity').value);
       const newProduct = {
@@ -145,31 +146,34 @@
         precio: currentProduct.price,
         cantidad: quantity
       };
-  
+
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  
       const existente = carrito.find(item => item.nombre === newProduct.nombre);
       if (existente) {
         existente.cantidad += newProduct.cantidad;
       } else {
         carrito.push(newProduct);
       }
-  
+
       localStorage.setItem("carrito", JSON.stringify(carrito));
       updateCartCount();
       alert('Producto agregado al carrito');
       closeDetail();
     }
-  
+
     function updateCartCount() {
       const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      const total = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+      const total = carrito.reduce((sum, item) => sum + (item.cantidad || 1), 0);
       document.getElementById('contador-carrito').textContent = total;
     }
-  
+
     document.addEventListener('DOMContentLoaded', updateCartCount);
+
+    // Sincronizar contador entre pestañas
+    window.addEventListener('storage', e => {
+      if (e.key === 'carrito') updateCartCount();
+    });
   </script>
-  
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
