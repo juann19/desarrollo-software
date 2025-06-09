@@ -14,17 +14,16 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "id_usuario")
-    private Integer idUsuario;
-
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+    
     private String estado;
 
     @Column(name = "fecha_pedido")
     private Timestamp fechaPedido;
 
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    
 
     @OneToMany(mappedBy = "pedido")
     private List<Detalle_Pedido> detalles;
@@ -39,12 +38,12 @@ public class Pedido {
         this.id = id;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public String getEstado() {

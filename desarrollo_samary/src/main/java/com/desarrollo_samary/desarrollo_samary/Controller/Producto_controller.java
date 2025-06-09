@@ -1,9 +1,11 @@
-// src/main/java/com/desarrollo_samary/desarrollo_samary/controller/ProductoController.java
-
 package com.desarrollo_samary.desarrollo_samary.Controller;
 
 import com.desarrollo_samary.desarrollo_samary.Entity.Productos;
 import com.desarrollo_samary.desarrollo_samary.Service.serviceProducto;
+import com.desarrollo_samary.desarrollo_samary.Controller.Util.ApiResponse;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +13,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/productos")
-@CrossOrigin(origins = "*") // permite conexiones desde el frontend local
+@CrossOrigin(origins = "*")
 public class Producto_controller {
-
 
     private final serviceProducto service;
 
@@ -22,30 +23,47 @@ public class Producto_controller {
     }
 
     @GetMapping
-    public List<Productos> listarProductos() {
-        return service.obtenerTodos();
+    public ResponseEntity<ApiResponse<List<Productos>>> listarProductos() {
+        List<Productos> lista = service.obtenerTodos();
+        ApiResponse<List<Productos>> response = new ApiResponse<>(true, "Lista de productos", lista);
+        return ResponseEntity.ok(response);
     }
+
     @GetMapping("/{id}")
-    public  Optional<Productos> obtenerPorId(@PathVariable Integer id) {
-        return service.obtenerPorId(id);
+    public ResponseEntity<ApiResponse<Productos>> obtenerPorId(@PathVariable Integer id) {
+        Optional<Productos> producto = service.obtenerPorId(id);
+        if (producto.isPresent()) {
+            ApiResponse<Productos> response = new ApiResponse<>(true, "Producto encontrado", producto.get());
+            return ResponseEntity.ok(response);
+        } else {
+            ApiResponse<Productos> response = new ApiResponse<>(false, "Producto no encontrado", null);
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping
-    public Productos crear(@RequestBody Productos producto) {
-        return service.guardar(producto);
+    public ResponseEntity<ApiResponse<Productos>> crearProducto(@RequestBody Productos producto) {
+        Productos nuevo = service.guardar(producto);
+        ApiResponse<Productos> response = new ApiResponse<>(true, "Producto creado exitosamente", nuevo);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public Productos actualizar(@PathVariable Integer id, @RequestBody Productos producto) {
+    public ResponseEntity<ApiResponse<Productos>> actualizar(@PathVariable Integer id, @RequestBody Productos producto) {
         producto.setId(id);
-        return service.guardar(producto);
+        Productos actualizado = service.guardar(producto);
+        ApiResponse<Productos> response = new ApiResponse<>(true, "Producto actualizado", actualizado);
+        return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public ResponseEntity<ApiResponse<Void>> eliminar(@PathVariable Integer id) {
         service.eliminar(id);
+        ApiResponse<Void> response = new ApiResponse<>(true, "Producto eliminado", null);
+        return ResponseEntity.ok(response);
     }
 }
+
 
     
 

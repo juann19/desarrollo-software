@@ -26,7 +26,9 @@ public class Usuario {
     @Column(name = "created_at")
     private Timestamp createdAt;
 
-    @OneToMany(mappedBy = "Usuarios")
+    
+
+    @OneToMany(mappedBy = "usuario")
     private List<Pedido> pedidos;
 
 

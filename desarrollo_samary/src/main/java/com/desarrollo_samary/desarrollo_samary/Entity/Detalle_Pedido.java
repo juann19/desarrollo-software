@@ -1,9 +1,9 @@
 package com.desarrollo_samary.desarrollo_samary.Entity;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-
 
 @Entity
 @JsonIgnoreProperties({"pedido", "producto"})
@@ -14,11 +14,13 @@ public class Detalle_Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "id_pedido")
-    private Integer idPedido;
+    @ManyToOne
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
 
-    @Column(name = "id_producto")
-    private Integer idProducto;
+    @ManyToOne
+    @JoinColumn(name = "id_producto")
+    private Productos producto;
 
     private Integer cantidad;
 
@@ -28,16 +30,8 @@ public class Detalle_Pedido {
     @Column(name = "created_at")
     private Timestamp createdAt;
 
-    @ManyToOne
-    @JoinColumn(name = "id_pedido")
-    private Pedido pedido;
-
-    @ManyToOne
-    @JoinColumn(name = "id_producto")
-    private Productos producto;
-
-
     // Getters y Setters
+
     public Integer getId() {
         return id;
     }
@@ -46,20 +40,20 @@ public class Detalle_Pedido {
         this.id = id;
     }
 
-    public Integer getIdPedido() {
-        return idPedido;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setIdPedido(Integer idPedido) {
-        this.idPedido = idPedido;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
-    public Integer getIdProducto() {
-        return idProducto;
+    public Productos getProducto() {
+        return producto;
     }
 
-    public void setIdProducto(Integer idProducto) {
-        this.idProducto = idProducto;
+    public void setProducto(Productos producto) {
+        this.producto = producto;
     }
 
     public Integer getCantidad() {
@@ -86,4 +80,3 @@ public class Detalle_Pedido {
         this.createdAt = createdAt;
     }
 }
-
