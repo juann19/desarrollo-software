@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+nav {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+header svg {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+header svg:hover {
+  transform: scale(1.1);
+}
+
+header .container.py-3 {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+#brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color:#583310;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #b28462;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* TOP BAR */
+.top-bar {
+  background-color: #D9C2A8;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 1em;
+}
+
+/* HEADER */
+header {
+  background-color: #fff;
+}
+
+/* Estilos para los iconos del header */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.icono {
+  display: flex;
+  align-items: center;
+  color: #583310;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.icono svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+.icono:hover {
+  transform: scale(1.1);
+  color: #b28462;
+}
+
+/* Estilo para el contador del carrito */
+.badge-carrito {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #D9C2A8;
+  color: white;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+
+/* NAVBAR */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #b28462;
+}
+
+.navbar {
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.3rem !important;
+  flex-grow: 1;
+  justify-content: center !important;
+}
+
+.nav-link {
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
+  font-size: 0.95rem;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 2px;  /* Aquí el cambio importante */
+  border: none !important; 
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-family: 'Nunito', sans-serif;
+  padding: 10px 0;
+  color: #1E1E1E;
+  font-size: 1.3em;
+  letter-spacing: 0.3px;
+  text-transform: none; 
+  font-weight: 300; /* Cambiado de normal/bold a 400 para más fino */
+  border: none !important; 
+  background: none !important;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+/*Modificación del carrusel*/
+
+.carousel-item {
+  transition: transform 0.1s ease;
+}
+.carrusel-estrecho {
+  height: 75vh;
+  min-height: 400px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+}
+.carrusel-estrecho .carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 75vh;
+  min-height: 400px;
+  max-height: 90vh;
+  position: relative;
+}
+.carrusel-estrecho .carousel-caption {
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  transform: none;
+  text-align: left;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem 1rem 0 0;
+  max-width: 600px;
+  margin: 0 0 0rem 7rem; /* separa del borde si quieres */
+  z-index: 2;
+  margin-left: 10rem; /*Mas para la izqueierda o derecha*/
+}
+.carrusel-estrecho .carousel-caption h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.carrusel-estrecho .carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* Opacidad y color del fondo */
+  z-index: 1;
+}
+
+.carrusel-estrecho .carousel-caption {
+  position: absolute;
+  z-index: 2; 
+}
+.carrusel-estrecho .carousel-caption h5,
+.carrusel-estrecho .carousel-caption p {
+  color: #fff;
+  text-shadow: 0 2px 8px #000;
+}
+
+.carrusel-link {
+  display: block;              
+  width: 100%;               
+  background: transparent;     
+  padding: 2em 0;            
+  border-radius: 0;
+  color: #fff !important;
+  text-align: left;
+  transition: color 0.3s;
+  margin-top: 0;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 1.8s; /* Ajusta el tiempo para más suave */
+  transition-timing-function: ease-in-out;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* SLIDER */
+.slider-container {
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* FOOTER */
+
+footer, .footer-section, .footer-link, .footer-section h5, .footer-section p {
+  font-family: 'Nunito', sans-serif !important;
+}
+
+footer .text-center small {
+  color: #adb5bd;
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+  .footer-link {
+      color: #adb5bd !important;
+      text-decoration: none !important;
+      transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+      color: #fff !important;
+  }
+  
+  .footer-link:visited {
+      color: #adb5bd !important;
+  }
+  
+  .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .social-icon:hover {
+      transform: translateY(-2px);
+      opacity: 0.8;
+  }
+  
+  .footer-section h5 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #fff;
+  }
+  
+  .footer-section p {
+      margin-bottom: 0.5rem;
+      color: #adb5bd;
+  }
+  
+  .vertical-divider {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1.5px;
+      background-color: #495057;
+      border-radius: 2px;
+  }
+  
+  .footer-section:last-child .vertical-divider {
+      display: none;
+  }
+
+/* COLECCIONES */
+     .collections-section {
+            padding: 0px 20px;
+            background: #fff;
+        }
+
+        .collection-card {
+            position: relative;
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .collection-card:hover .collection-overlay {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .collection-title {
+            font-size: 28px;
+            font-weight: 300;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-align: center;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .collection-card:hover .collection-title {
+            transform: translateY(-10px);
+        }
+
+        .collection-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: #fff;
+            color: #1E1E1E;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .collection-card:hover .collection-button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .collection-button:hover {
+            background: #D9C2A8;
+            transform: translateY(-2px);
+            color: #1E1E1E;
+            text-decoration: none;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1E1E1E;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Efectos adicionales */
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 196, 168, 0.1), rgba(139, 115, 85, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .collection-card:hover::before {
+            opacity: 1;
+        }
+
+        .collection-overlay {
+            z-index: 2;
+        }
+
+
+
+/*Nosotros somos*/
+
+h1, h2, h3, .titulo-contacto, .collection-title {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Fuente para el texto normal */
+body, p, li, label, .lema {
+  font-family: 'Nunito', sans-serif;
+}
+
+
+
+.texto-contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+  padding: 40px;
+  font-size: 1.3rem;
+}
+  .historia-section {
+            font-family: 'Nunito', sans-serif;
+            padding: 20px;
+        }
+
+        .historia-section .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .historia-section .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .historia-section .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .historia-section .card {
+            background: #fffefe;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #c4c1c1;
+        }
+
+        .historia-section .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .historia-section .card-icon {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #d4a574, #8b4513);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .historia-section .card h3 {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin: 0;
+        }
+
+        .historia-section .card-content {
+            line-height: 1.6;
+            color: #1E1E1E;
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+       
+/* PRODUCT MODAL */
+.product-detail {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1050;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-detail img {
+  max-width: 80%;
+  border-radius: 8px;
+}
+
+.product-description h3 {
+  font-size: 2em;
+  color: #6a4428;
+  margin-bottom: 20px;
+}
+
+.product-description p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.product-description .price {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #b28462;
+}
+
+.product-description input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.product-description button {
+  background-color: #b28462;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.product-description button:hover {
+  background-color: #6a4428;
+}
+
+.product-detail .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.product-detail .close-btn:hover {
+  color: #b28462;
+}
+
+/* GRID */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.product-item {
+  width: 250px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.product-item:hover img {
+  transform: scale(1.05);
+}
+
+/*Contcto*/
+
+.contacto-seccion label {
+  font-family: 'Nunito', serif;
+  color: white;
+  font-size: 1.3rem;
+}
+.titulo-contacto {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300 !important;
+  color: white;
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* opcional: mejora la legibilidad */
+  margin-bottom: 1rem;
+}
+.contacto-seccion input,
+.contacto-seccion textarea {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border: none;
+}
+
+.contacto-seccion label {
+  font-weight: 500;
+}
+
+.contacto-seccion button {
+  background-color: #D9C2A8;
+  color: black;
+  font-weight: bold;
+  border: none;
+}
+
+.contacto-seccion button:hover {
+  background-color: #ddd;
+}
+/* DROPDOWN */
+nav ul li.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px 0;
+  min-width: 180px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+nav ul li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+nav ul li .dropdown-menu li a:hover {
+  color: #b28462;
+  background-color: #fff;
+}
+
+/* BOTONES DE IMAGEN EN AURA */
+.toggle-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 0.9em;
+  background-color: #b28462;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #6a4428;
+}
+
+.img-text {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #444;
+}
+   
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .products-grid {
+    gap: 20px;
+  }
+  .product-item {
+    width: 45%;
+  }
+  .header-logo {
+    justify-content: flex-start !important;
+  }
+  .header-icons {
+    justify-content: flex-end !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .colecciones-section {
+    padding: 10px;
+  }
+  .product-item {
+    width: 100%;
+  }
+  .product-detail {
+    width: 98%;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  #brand-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #brand-title {
+    font-size: 1.8rem;
+  }
+}
+ /* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header p {
+        font-size: 1.1rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .card {
+        padding: 30px 25px;
+    }
+    
+    .card h3 {
+        font-size: 1.5rem;
+    }
+}
