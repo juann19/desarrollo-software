@@ -13,6 +13,9 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -283,6 +286,9 @@ nav ul li a:hover {
 
 footer, .footer-section, .footer-link, .footer-section h5, .footer-section p {
   font-family: 'Nunito', sans-serif !important;
+}
+footer{
+  flex-shrink: 0;
 }
 
 footer .text-center small {
@@ -744,6 +750,14 @@ nav ul li .dropdown-menu li a:hover {
   .header-icons {
     justify-content: flex-end !important;
   }
+}
+
+.colecciones-section {
+  min-height: calc(100vh - 60px - 80px - 220px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 0 auto;
 }
 
 @media (max-width: 600px) {

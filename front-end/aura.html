@@ -186,7 +186,6 @@
   </div>
     </footer>
   
-
 <script>
   let productoIdSeleccionado = null;
   let productoStockSeleccionado = null;
@@ -222,6 +221,8 @@
       const data = await res.json();
       const productosAura = data.data.filter(p => p.categoria === "Aura");
 
+      if (productosAura.length === 0) throw new Error("Sin productos Aura");
+
       productosAura.forEach(producto => {
         const div = document.createElement("div");
         div.classList.add("product-item");
@@ -233,7 +234,25 @@
         contenedor.appendChild(div);
       });
     } catch (err) {
-      console.error("Error al cargar productos:", err);
+      // Si falla la API o no hay productos, muestra productos de ejemplo
+      contenedor.innerHTML = `
+        <div class="product-item" onclick="showProductDetail({id:1, stock:10, imagenUrl:'img/aura1.jpeg', nombre:'Bolso Aura 1', descripcion:'Bolso moderno con diseño minimalista y detalles dorados.', precio:180})">
+          <img src="img/aura1.jpeg" alt="Bolso Aura 1" />
+          <p>Bolso Aura 1</p>
+        </div>
+        <div class="product-item" onclick="showProductDetail({id:2, stock:8, imagenUrl:'img/aura.jpeg', nombre:'Bolso Aura 2', descripcion:'Estilo elegante con texturas en cuero premium.', precio:190})">
+          <img src="img/aura.jpeg" alt="Bolso Aura 2" />
+          <p>Bolso Aura 2</p>
+        </div>
+        <div class="product-item" onclick="showProductDetail({id:3, stock:5, imagenUrl:'img/aura3.jpeg', nombre:'Bolso Aura 3', descripcion:'Perfecto para eventos formales y uso diario.', precio:175})">
+          <img src="img/aura3.jpeg" alt="Bolso Aura 3" />
+          <p>Bolso Aura 3</p>
+        </div>
+        <div class="product-item" onclick="showProductDetail({id:4, stock:2, imagenUrl:'img/aurA.webp', nombre:'Bolso Aura Vip', descripcion:'Edición especial Aura Vip.', precio:250})">
+          <img src="img/aurA.webp" alt="Bolso Aura Vip" />
+          <p>Bolso Aura Vip</p>
+        </div>
+      `;
     }
   }
 
@@ -278,8 +297,6 @@
     if (e.key === 'carrito') actualizarContadorCarrito();
   });
 </script>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
